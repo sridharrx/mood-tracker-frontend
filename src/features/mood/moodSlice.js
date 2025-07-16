@@ -1,12 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  entries: [],
-};
-
 const moodSlice = createSlice({
   name: 'mood',
-  initialState,
+  initialState: {
+    entries: [],
+  },
   reducers: {
     addMoodEntry(state, action) {
       state.entries.push(action.payload);

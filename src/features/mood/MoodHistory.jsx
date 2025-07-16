@@ -1,13 +1,41 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMoodEntry } from './moodSlice';
+import { getMoods } from '../../services/api';
+
 export default function MoodHistory() {
-  console.log('MoodHistory rendered');
+  const entries = useSelector((state) => state.mood.entries);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const loadMoods = async () => {
+      try {
+        const res = await getMoods();
+        res.data.forEach((entry) => dispatch(addMoodEntry(entry)));
+      } catch (err) {
+        console.error('Failed to fetch moods:', err);
+      }
+    };
+    loadMoods();
+  }, [dispatch]);
 
   return (
-    <div style={{ marginTop: 40, textAlign: 'center', color: 'black' }}>
+    <div style={{ marginTop: 40, textAlign: 'center' }}>
       <h2>Mood History</h2>
-      <ul>
-        <li>😊 - 7/10 - 2025-07-16</li>
-        <li>😐 - 5/10 - 2025-07-15</li>
-      </ul>
+      {entries.length === 0 ? (
+        <p>No entries yet.</p>
+      ) : (
+        <ul style={{ listStyle: 'none', padding: 0 }}>
+          {entries.map((entry, i) => (
+            <li key={i} style={{ margin: '10px 0' }}>
+              <span style={{ fontSize: '1.5rem' }}>{entry.mood}</span>{' '}
+              <span style={{ color: '#666', fontSize: '0.9rem' }}>
+                {new Date(entry.date).toLocaleString()}
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

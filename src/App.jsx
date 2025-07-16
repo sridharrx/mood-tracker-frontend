@@ -1,10 +1,12 @@
-function App() {
+import MoodSelector from './features/mood/MoodSelector';
+import MoodHistory from './features/mood/MoodHistory';
+
+export default function App() {
   return (
-    <div style={{ padding: '2rem', background: 'white', color: 'black' }}>
-      <h1>🎯 No CSS. No Redux. Just React.</h1>
-      <p>If you see this, it’s a CSS-related issue.</p>
+    <div style={{ textAlign: 'center' }}>
+      <h2>Mood Tracker</h2>
+      <MoodSelector />
+      <MoodHistory />
     </div>
   );
 }
-
-export default App;
