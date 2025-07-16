@@ -1,8 +1,10 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vite.dev/config/
 export default defineConfig({
-  base: '/mood-tracker-frontend/', // 👈 REQUIRED for GitHub Pages
+  base: '/mood-tracker-frontend/', // match your repo name
   plugins: [react()],
+  build: {
+    outDir: 'docs', // 👈 THIS IS THE KEY
+  },
 });

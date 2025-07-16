@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { getMoods } from '../../services/api';
-
 export default function MoodHistory() {
-  const [entries, setEntries] = useState([]);
-
-  useEffect(() => {
-    getMoods().then((res) => setEntries(res.data)).catch(console.error);
-  }, []);
+  console.log('MoodHistory rendered');
 
   return (
-    <div className="mood-history" style={{ marginTop: 40, textAlign: 'center' }}>
-      {/* ... same UI structure ... */}
+    <div style={{ marginTop: 40, textAlign: 'center', color: 'black' }}>
+      <h2>Mood History</h2>
+      <ul>
+        <li>😊 - 7/10 - 2025-07-16</li>
+        <li>😐 - 5/10 - 2025-07-15</li>
+      </ul>
     </div>
   );
 }
