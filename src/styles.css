@@ -1,0 +1,93 @@
+/* src/styles.css */
+
+body {
+  background: #1e1e1e;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+button {
+  background: #2e2e2e;
+  color: #f0f0f0;
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 5px;
+}
+
+button:hover {
+  background: #444;
+  border-color: #888;
+}
+
+button:focus {
+  outline: none;
+  border-color: #08f;
+  box-shadow: 0 0 5px #08f;
+}
+
+.mood-button {
+  font-size: 40px;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.mood-button.selected {
+  border: 3px solid #08f;
+  background: #222;
+}
+
+.mood-history {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.mood-history h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.mood-history ul {
+  list-style: none;
+  padding: 0;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.mood-history li {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-bottom: 1px solid #444;
+  font-size: 1.2rem;
+  gap: 12px;
+}
+
+.mood-history li:last-child {
+  border-bottom: none;
+}
+
+.mood-emoji {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.mood-date {
+  color: #999;
+  font-size: 0.85rem;
+  flex-grow: 1;
+  white-space: nowrap;
+}
+
