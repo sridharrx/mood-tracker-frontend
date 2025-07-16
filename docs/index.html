@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <script type="module" src="/mood-tracker-frontend/main-BvQMjcD9.js"></script>
+    <meta charset="UTF-8">
+    <title>Mood Tracker</title>
+    <!-- ABSOLUTE PATH (Best for GitHub Pages) -->
+    <script type="module" src="/mood-tracker-frontend/assets/main.js"></script>
+    
+    <!-- DEBUGGING (Remove after verification) -->
+    <script>
+      // Verify file exists on GitHub
+      fetch('/mood-tracker-frontend/assets/main-BvQMjcD9.js')
+        .then(r => console.log('JS found:', r.ok))
+        .catch(e => console.error('JS missing!', e));
+    </script>
   </head>
-  <body>xxxxxxxxxxxxxxxxxxxxxxxx
+  <body>
     <div id="root"></div>
   </body>
 </html>
