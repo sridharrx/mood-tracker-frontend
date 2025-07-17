@@ -25,9 +25,34 @@ export default function MoodHistory() {
       {entries.length === 0 ? (
         <p>No entries yet.</p>
       ) : (
-        <ul style={{ listStyle: 'none', padding: 0 }}>
+        <ul
+          style={{
+            listStyle: 'none',
+            padding: 0,
+            display: 'grid',
+            gridTemplateRows: 'repeat(4, 1fr)',
+            gridAutoFlow: 'column',
+            gap: '10px',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '200px',
+          }}
+        >
           {entries.map((entry, i) => (
-            <li key={i} style={{ margin: '10px 0' }}>
+            <li
+              key={i}
+              style={{
+                margin: 0,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                border: '1px solid #eee',
+                borderRadius: '8px',
+                padding: '10px',
+                background: '#fafafa',
+                minWidth: '120px',
+              }}
+            >
               <span style={{ fontSize: '1.5rem' }}>{entry.mood}</span>{' '}
               <span style={{ color: '#666', fontSize: '0.9rem' }}>
                 {new Date(entry.date).toLocaleString()}
